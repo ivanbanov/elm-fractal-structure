@@ -8798,12 +8798,17 @@ var _user$project$App_Model$Flags = F3(
 	});
 
 var _user$project$App_Subscriptions$subscriptions = function (model) {
+	var counter2Sub = _user$project$App_Counter_Subscriptions$subscriptions(model.counter2);
 	var counterSub = _user$project$App_Counter_Subscriptions$subscriptions(model.counter);
 	return _elm_lang$core$Platform_Sub$batch(
 		{
 			ctor: '::',
 			_0: A2(_elm_lang$core$Platform_Sub$map, _user$project$App_Messages$CounterMsg, counterSub),
-			_1: {ctor: '[]'}
+			_1: {
+				ctor: '::',
+				_0: A2(_elm_lang$core$Platform_Sub$map, _user$project$App_Messages$Counter2Msg, counter2Sub),
+				_1: {ctor: '[]'}
+			}
 		});
 };
 

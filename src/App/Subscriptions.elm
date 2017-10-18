@@ -12,5 +12,11 @@ subscriptions model =
     let
         counterSub =
             Counter.subscriptions model.counter
+
+        counter2Sub =
+            Counter.subscriptions model.counter2
     in
-    Sub.batch [ Sub.map CounterMsg counterSub ]
+    Sub.batch
+        [ Sub.map CounterMsg counterSub
+        , Sub.map Counter2Msg counter2Sub
+        ]
