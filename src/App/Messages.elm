@@ -1,9 +1,9 @@
 module App.Messages exposing (Msg(..))
 
-import App.Counter.Messages
+import App.Counter.Messages as Counter
 
 
 type Msg
     = NoOp
-    | CounterMsg App.Counter.Messages.Msg
-    | Counter2Msg App.Counter.Messages.Msg
+    | CounterMsg Counter.Msg
+    | Counter2Msg Counter.Msg

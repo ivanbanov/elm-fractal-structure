@@ -1,7 +1,6 @@
 module App.Update exposing (..)
 
-import App.Counter.Messages
-import App.Counter.Update
+import App.Counter.Update as Counter
 import App.Messages exposing (..)
 import App.Model exposing (Model)
 import Utils exposing (log)
@@ -20,7 +19,7 @@ update msg model =
         CounterMsg msg ->
             let
                 ( model_, cmd ) =
-                    App.Counter.Update.update msg model.counter
+                    Counter.update msg model.counter
             in
             ( { model | counter = model_ }
             , Cmd.map CounterMsg cmd
@@ -29,7 +28,7 @@ update msg model =
         Counter2Msg msg ->
             let
                 ( model_, cmd ) =
-                    App.Counter.Update.update msg model.counter2
+                    Counter.update msg model.counter2
             in
             ( { model | counter2 = model_ }
             , Cmd.map Counter2Msg cmd
